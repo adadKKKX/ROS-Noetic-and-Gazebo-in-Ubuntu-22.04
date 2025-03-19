@@ -8,7 +8,7 @@ The instructions to install ROS Noetic from source in Jammy from some websites a
 
 
 #### Install the basic stuff
-sudo apt install git gnupg wget
+sudo apt install git gnupg wget cmake  
 
 
 
@@ -55,8 +55,7 @@ sudo curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | su
 
 sudo apt update 
 
-
-sudo apt-get install python3-rosdep python3-rosinstall-generator python3-vcstools python3-vcstool build-essential
+sudo apt-get install python3-rosdep python3-rosinstall-generator python3-vcstools python3-vcstool build-essential libfltk1.3-dev
 
 sudo rosdep init
 ####  Do NOT do rosdep update yet!!!
