@@ -1,5 +1,6 @@
 
-These instructions were created by Ali Tousi (stousi@missouri.edu) and G. N. DeSouza (DeSouzaG@missouri.edu)
+These instructions were created by Ali Tousi (stousi@missouri.edu) and G. N. DeSouza (DeSouzaG@missouri.edu) 
+
 
 # ROS-Noetic-and-Gazebo-in-Ubuntu-22.04
 The instructions to install ROS Noetic from source in Jammy from some websites are incomplete -- one, for ex, claims to install ros-desktop-full, but it doesn't (e.g. there is no Gazebo afterwards). I have modified these instructions to install Gazebo from binary packages from OSR and ROS from source (from Focal). 
@@ -68,45 +69,18 @@ sudo wget http://archive.ubuntu.com/ubuntu/pool/universe/h/hddtemp/hddtemp_0.3-b
 
 sudo apt install ./hddtemp_0.3-beta15-53_amd64.deb
 
-sudo wget https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/base.yaml
+sudo wget https://gist.githubusercontent.com/adadKKKX/89415016ad03f40817efd3cdcb419241/raw/0f3489827324a735e16ebb321f98febabef0dbc7/base.yaml
 
-sudo vi base.yaml  #######    to look like this...
-
-
-
-###### hddtemp:
-######  arch: [hddtemp]  
-######  debian: [hddtemp]
-######  fedora: [hddtemp]
-######  freebsd: [python27]
-######  gentoo: [app-admin/hddtemp]
-######  macports: [python27]  
-######  nixos: [hddtemp]  
-######  openembedded: [hddtemp@meta-oe]  
-######  opensuse: [hddtemp]  
-######  rhel: [hddtemp]  
-######  slackware: [hddtemp]  
-######  ubuntu: 
-######    '*': null   
-######    bionic: [hddtemp]    
-######    focal: [hddtemp]    
-######    impish: [hddtemp]    
-######    jammy: [hddtemp]
-    
-
-
-####  Save it
 sudo mv base.yaml /etc/ros/rosdep/sources.list.d/
 
-sudo vi /etc/ros/rosdep/sources.list.d/20-default.list    #####   to look like this
+sudo vi /etc/ros/rosdep/sources.list.d/20-default.list 
 
 
-######
+###### Replace base.yaml
 #yaml https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/base.yaml
 
 yaml file:///etc/ros/rosdep/sources.list.d/base.yaml
 ######
-
 
 #### Download list of packages to install noetic-desktop-full
 rosdep update
